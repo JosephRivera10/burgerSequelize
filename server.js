@@ -25,6 +25,7 @@ var routes = require("./controllers/burgers_controller.js");
 app.use("/", routes);
 app.use("/update", routes);
 app.use("/create", routes);
+app.use("/delete", routes);
 
 
 // listen on port 3000

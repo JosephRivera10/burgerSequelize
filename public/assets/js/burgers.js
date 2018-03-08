@@ -1,10 +1,9 @@
 $(function(){
 	$(".eatBurger").on("click", function(event) {
+		event.preventDefault();
 		var id = $(this).data("id");
 		var newEat = $(this).data("neweat");
-		console.log("test", id);
-		console.log("test", newEat);
-
+		
 		var newEatState = {
 			devoured: newEat
 		};
@@ -37,4 +36,15 @@ $(function(){
 			location.reload();
 		});
 	});
+
+	$(".delete").on("click", function(event) {
+		var id = $(this).data("id");
+		$.ajax("/burgers/delete/" + id, {
+			type: "DELETE",
+			url: "/burgers/delete/" + id
+		}).then(function(){
+			location.reload();
+		});
+	});
+	
 });

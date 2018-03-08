@@ -1,5 +1,7 @@
 <li>
-	{{name}}
+	<!-- {{name}}
+	{{id}} -->
 
 	<button class="eatBurger btn btn-outline-primary" data-id="{{this.id}}" data-neweat="{{devoured}}">{{#if devoured}}Eat Burger!{{else}}Remake Burger!{{/if}}</button>
+	<button class="delete btn btn-outline-danger" data-id="{{id}}">Delete!</button>
 </li>

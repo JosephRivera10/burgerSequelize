@@ -54,4 +54,12 @@ router.put("/burgers/update/:id", function(req, res) {
   });
 });
 
+router.delete("/burgers/delete/:id", function(req, res) {
+  db.Burger.destroy({
+    where: {id: req.params.id}
+  }).then(function() {
+    res.json("index");
+  });
+});
+
 module.exports = router;
